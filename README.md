@@ -6,12 +6,20 @@ What came out: a stethoscope head with a mic stuck on the end of the tube, an ES
 
 Not a medical device, just an attempt that still have problems that I plan to tackle in future.
 
-<p align="center"> <img src="hardware/enclosure_and_probe.jpg" width="48%" alt="The box with the LCD and the stethoscope head"> <img src="hardware/inside_enclosure.jpg" width="48%" alt="The messy inside of the box"> </p>
+<p align="center"> <img src="hardware/enclosure_and_probe.jpg" width="48%" alt="The box with the LCD and the stethoscope head"> <img src="image.png" width="48%" alt="The messy inside of the box"> </p>
 
 Watch it work
-media/01_final_device_demo.mp4: the finished box (will hopefully replace the cardboard with 3D printed box in winters)
-media/02_live_serial_plotter.mp4: the live Arduino Serial Plotter trace
-media/03_neck_pulse_video.mp4: my first proper recording, from the neck, where lub and dub finally showed up relatively clearly
+
+Click a preview to open the full video.
+
+<table>
+  <tr>
+    <td align="center"><a href="Steth_sirkesaamnewalatest.mp4"><img src="media/01_final_device_demo_preview.gif" width="220" alt="Final device demo"></a><br>The finished box (will hopefully replace the cardboard with 3D printed box in winters)</td>
+    <td align="center"><a href="Pulses_neck.mp4"><img src="media/02_live_serial_plotter_preview.gif" width="220" alt="Live serial plotter"></a><br>The live Arduino Serial Plotter trace</td>
+    <td align="center"><a href="media/neck_pulse_video.mp4"><img src="media/03_neck_pulse_preview.gif" width="220" alt="Neck pulse recording"></a><br>My first proper recording, from the neck, where lub and dub finally showed up relatively clearly</td>
+  </tr>
+</table>
+
 What the LEDs mean
 LED	Meaning
 Red, steady	Wait. It's learning the background noise. Keep the mic in the air for about 8 s.
@@ -27,7 +35,7 @@ NOW  75 bpm | AVG  75 bpm | Steady
 NOW is the rate over the last 4 s, AVG is over the last 10 s, and the last word says how regular the rhythm is (Steady, Slight or Uneven).
 
 The original plan
-<p align="center"> <img src="diagrams/block_diagram_original_plan.jpg" width="75%" alt="My hand-drawn block diagram"> </p>
+<p align="center"> <img src="1794257790086_WhatsApp%20Image%202026-11-10%20at%2002.26.00.jpeg" width="75%" alt="My hand-drawn block diagram"> </p>
 
 Mic → analog front end → ADC → DSP on the ESP32, send the same signal to MATLAB for heavier processing, compare the two, and later add ML for diagnosis. The ESP32 part works. MATLAB mostly did not cooperate (story below).
 
